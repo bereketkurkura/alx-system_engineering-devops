@@ -9,8 +9,8 @@ class Node:
         """Initialize a new Node.
 
         Args:
-             data (int): The data of the new Node.
-             next_node (Node): The next node of the new Node.
+            data (int): The data of the new Node.
+            next_node (Node): The next node of the new Node.
         """
 
         self.data = data
@@ -52,7 +52,7 @@ class SinglyLinkedList:
         ordered numerical position.
 
         Args:
-        value (Node): The new Node to insert.
+            value (Node): The new Node to insert.
         """
         new = Node(value)
         if self.__head is None:
