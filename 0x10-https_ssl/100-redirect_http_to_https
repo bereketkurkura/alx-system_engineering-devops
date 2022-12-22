@@ -44,7 +44,7 @@ frontend www-http
 	    default_backend www-backend
 
 frontend www-https
-	  bind *:443 ssl crt /etc/ssl/www.fraol.tech/www.fraol.tech.pem
+	  bind *:443 ssl crt /etc/ssl/www.bereket.tech
 	  reqadd X-Forwarded-Proto:\ https
 	  acl letsencrypt-acl path_beg /.well-known/acme-challenge/
 	  use_backend letsencrypt-backend if letsencrypt-acl
@@ -53,8 +53,8 @@ frontend www-https
 backend www-backend
 	redirect scheme https code 301 if !{ ssl_fc }
 	balance roundrobin
-	server 212-web-01 34.138.6.145:80 check
-	server 212-web-02 104.196.191.134:80 check
+	server 61115-web-01 54.157.142.215:80 check
+	server 61115-web-02 35.153.83.8:80 check
 
 backend letsencrypt-backend
 	server letsencrypt 127.0.0.1:54321
